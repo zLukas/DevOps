@@ -29,6 +29,25 @@ $ master-fqdn=<fqdn>
 $ ssh user@${master-fqdn} sudo  cat /etc/rancher/rke2/rke2.yaml > .kube/config && sed -i 's/127.0.0.1/'${master-fqdn}'/' .kube/config
 ```
 
+# Linux
+
+for loop oneliner:
+`for file in < "${ARRAY[@]}" |$(cmd)>; do < do sstuff cmd >; done `
+
+symlink dirs
+` ln -s SOURCE_PATH LINK_PATH `
+
+ssh remove hosts from known-hosts
+`sed -i '<LINE_NUM>d' ~/.ssh/known_hosts`
+
+install NFS tools:
+`sudo apt install nfs-common`
+
+attach nfs builds storage:  
+``` 
+  sudo apt install nfs-common
+  sudo mkdir /mnt/myShare && sudo mount -t nfs myNfs.dot.com:/nsf/shared/path /mnt/myShare`
+```
 
 # Salt
 
